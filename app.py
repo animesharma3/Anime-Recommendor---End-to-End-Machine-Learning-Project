@@ -41,7 +41,7 @@ def recommend(title):
 #         titles = pd.concat([titles_sk, titles_nn], axis=0).drop_duplicates().values
 #     else:
 #         titles = titles_nn.values
-        
+    titles = titles_nn
     animes = []
     for t in titles:
         if t == title:
