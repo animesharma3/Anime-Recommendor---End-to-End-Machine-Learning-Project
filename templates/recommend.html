@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block title %}{{ title }} - {% endblock %}
+
+{% block content %}
+
+<form method="POST">
+    <div class='m-3'>
+        <input type="text" class="form-control input-search input" id='anime-input' name='title' placeholder="Enter Anime Title and Press Enter....">
+        <button type='submit' class="btn btn-primary m-2 d-none" id='search'>Search</button>
+    </div>
+</form>
+<div id="info">
+    <h1 class='display-2 title'>{{ title }}</h1>
+    <div class="c">
+            <img src="{{ poster_image[0] }}" class='mt-5'>
+        <div class='s'>
+            <h1 class="display-3">Summary</h1>
+            <p class="lead">{{ description[0] }}</p>
+        </div>
+    </div>
+    <a href='{{ stream_link }}'><h1 class='font-weight-bold' id='stream'>Click Here To Stream</h1></a>
+
+</div>
+
+<div class="display-3 recommended">
+    Recommended for you
+</div>
+<div class="anime-data">
+{% for anime in animes %}
+    <div>
+        <img src="{{ anime[1][0] }}">
+        <br>
+        <button class='btn text-white form-control' id='submit' type='submit'>{{ anime[0] }}</h3></button>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
