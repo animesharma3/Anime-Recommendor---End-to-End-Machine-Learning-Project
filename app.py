@@ -13,8 +13,7 @@ df_sample = pd.read_csv('anime_sample.csv')
 anime_indices = pd.Series(df_sample.index, index=df_sample['title_en'])
 
 # Loading necessary files
-file1 = open('sig.pkl', 'rb')
-sig = pickle.load(file1, encoding='latin1')
+sig = pickle.load(open('sig.pkl', 'rb'))
 file2 = open('model.pkl', 'rb')
 model = pickle.load(file2)
 
