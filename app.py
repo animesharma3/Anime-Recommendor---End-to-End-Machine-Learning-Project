@@ -13,9 +13,10 @@ df_sample = pd.read_csv('anime_sample.csv')
 anime_indices = pd.Series(df_sample.index, index=df_sample['title_en'])
 
 # Loading necessary files
-sig = np.load('sample_rec.npy')
-file = open('model.pkl', 'rb')
-model = pickle.load(file)
+file1 = open('sig.pkl', 'rb')
+sig = pickle.load(file1)
+file2 = open('model.pkl', 'rb')
+model = pickle.load(file2)
 
 app = Flask(__name__)
 
