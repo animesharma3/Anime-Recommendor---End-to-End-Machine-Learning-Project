@@ -13,8 +13,8 @@ df_sample = pd.read_csv('anime_sample.csv')
 anime_indices = pd.Series(df_sample.index, index=df_sample['title_en'])
 
 # Loading necessary files
-# file1 = open('sig.pkl', 'rb')
-# sig = pickle.load(file1)
+file1 = open('sig.pkl', 'rb')
+sig = pickle.load(file1, encoding='unicode')
 file2 = open('model.pkl', 'rb')
 model = pickle.load(file2)
 
@@ -32,16 +32,15 @@ def recommend(title):
     titles_nn = recommender_nearest_neighbors(title, df_population.drop(['Unnamed: 0', 'created_at', 'description', 'title_en_jp', 'title_ja_jp', 'poster_image', 'age_rating', 'age_rating_guide', 'show_type', 'status'], axis=1), model)
 
     # NLP Based Recommendation System
-#     try:
-#         titles_sk = recommender_sigmoid_kernel(title, sig, df_sample, anime_indices)
-#     except KeyError as e:
-#         titles_sk = []
+    try:
+        titles_sk = recommender_sigmoid_kernel(title, sig, df_sample, anime_indices)
+    except KeyError as e:
+        titles_sk = []
 
-#     if len(titles_sk) != 0:
-#         titles = pd.concat([titles_sk, titles_nn], axis=0).drop_duplicates().values
-#     else:
-#         titles = titles_nn.values
-    titles = titles_nn
+    if len(titles_sk) != 0:
+        titles = pd.concat([titles_sk, titles_nn], axis=0).drop_duplicates().values
+    else:
+        titles = titles_nn.values
     animes = []
     for t in titles:
         if t == title:
