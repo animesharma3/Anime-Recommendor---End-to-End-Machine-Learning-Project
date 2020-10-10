@@ -1,1 +1,4 @@
+'*.npy' filter=lfs diff=lfs merge=lfs -text
+'sample_rec.npy' filter=lfs diff=lfs merge=lfs -text
+sample_rec.npy filter=lfs diff=lfs merge=lfs -text
 sig.pkl filter=lfs diff=lfs merge=lfs -text
