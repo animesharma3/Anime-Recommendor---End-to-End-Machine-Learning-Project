@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <form method="POST">
+        <div class='m-3'>
+            <input type="text" class="form-control input-search input" id='anime-input' name='title' placeholder="Enter Anime Title and Press Enter....">
+            <button type='submit' class="btn btn-primary m-2 d-none" id='search'>Search</button>
+        </div>
+    </form>
+    <div class="anime-data">
+
+    </div>
+{% endblock %}

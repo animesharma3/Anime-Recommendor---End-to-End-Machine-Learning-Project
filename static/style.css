@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('/static/background.png');
+}
+
+h1 img {
+    width: 80px;
+    height: 80px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+a, a:hover {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.anime-data {
+    display: inline-table;
+    background: rgba(22, 22, 22, 0.6);
+}
+
+#info , .recommended, #stream, .title{
+    background: rgba(22, 22, 22, 0.6);
+}
+
+#info .c {
+    display: inline-flex;
+    background: rgba(22, 22, 22, 0.6);
+    float: left;
+}
+
+#info .s {
+    max-width: 800px;
+}
+
+#info img {
+    width: 300px;
+    height: 400px;
+    margin: 30px;
+    border: 2px solid white;
+    border-radius: 5%;
+    min-width: 300px;
+}
+
+.anime-data div {
+    display: inline-table;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.anime-data div img {
+    width: 250px;
+    height: 300px; 
+    margin-bottom: 10px; 
+    border: 2px solid whitesmoke; 
+    border-radius: 7%;
+}
+
+.anime-data div button,  .anime-data div button:focus {
+    background-color: black;
+    border: 2px solid whitesmoke;
+    font-size: 20px;
+}
