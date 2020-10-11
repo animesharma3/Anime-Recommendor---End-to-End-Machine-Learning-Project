@@ -66,6 +66,7 @@ function addToInput() {
                 searchBtn.click()
             } else if (e.target.id === 'recommend') {
                 animeInput.value = e.target.parentElement.children[2].innerHTML
+                form.setAttribute('action', `/${animeInput.value}`)
                 searchBtn.click()
             }
         }
